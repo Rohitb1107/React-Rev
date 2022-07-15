@@ -9,7 +9,7 @@ export const todoReducer = (store = initState, { type, payload }) => {
     case ADD_TODO: {
       return {
         ...store,
-        todo: [...store.todo, payload],
+        todo: [...store.todo, ...payload],
       };
     }
     default: {

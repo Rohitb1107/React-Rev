@@ -5,15 +5,19 @@ import axios from "axios";
 
 const Todo = () => {
   const [text, setText] = useState("");
-  // const [add, setAdd] = useState("");
+  // const [todoList, setTodoList] = useState([]);
 
-  // const todo = useSelector((store) => {
-  //   return store.todo.todo;
-  // });
+  const todo = useSelector((store) => {
+    return store.todo.todo;
+  });
 
   const dispatch = useDispatch();
 
-  const addTodo = () => {
+  useEffect(() => {
+    getTodo();
+  }, []);
+
+  const addTask = () => {
     axios
       .post("http://localhost:8080/todos", {
         title: text,
@@ -27,9 +31,16 @@ const Todo = () => {
       });
   };
 
-  // useEffect(() => {
-  //   addTodo();
-  // }, []);
+  const getTodo = () => {
+    axios
+      .get("http://localhost:8080/todos")
+      .then((res) => {
+        dispatch(addTodo(res.data));
+      })
+      .catch((err) => {
+        console.log("Error:", err);
+      });
+  };
 
   return (
     <div>
@@ -45,16 +56,22 @@ const Todo = () => {
       />
       <button
         onClick={() => {
-          addTodo();
+          addTask();
           // console.log(text);
         }}
       >
         Add
       </button>
 
-      {/* {text.map((e, i) => {
-        return <div key={i}>{e.title}</div>;
-      })} */}
+      {todo.map((e,i) => {
+        return (
+          <div key={i}>
+            <div>
+              <span>{`${i}:`}</span> {e.title}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
