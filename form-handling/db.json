@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Rohit",
+      "age": 19,
+      "email": "rohit@gmail.com"
+    },
+    {
+      "id": 2,
+      "username": "Thor",
+      "age": 25,
+      "email": "Thor@gmail.com"
+    },
+    {
+      "id": 3,
+      "username": "Tony",
+      "age": 22,
+      "email": "Tony@gmail.com"
+    },
+    {
+      "username": "rcbrohit2",
+      "age": "2",
+      "email": "rsb230584@gmail.com",
+      "id": 4
+    },
+    {
+      "username": "steve",
+      "age": "26",
+      "email": "steve@gmail.com",
+      "id": 5
+    },
+    {
+      "username": "hulk",
+      "age": "26",
+      "email": "hulk@gmail.com",
+      "id": 6
+    },
+    {
+      "username": "the_rohitb_07",
+      "age": "56",
+      "email": "rsb230584@gmail.com",
+      "id": 7
+    }
+  ]
+}
