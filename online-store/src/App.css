@@ -41,6 +41,11 @@ button {
   font-size: calc(10px + 2vmin);
 }
 
-.btn-div{
+.btn-div {
   margin-top: 5rem;
+}
+
+.prod-div {
+  display: flex;
+  flex-direction: column;
 }

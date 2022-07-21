@@ -33,9 +33,13 @@ const Home = () => {
         </ButtonGroup>
       </div>
 
-      <div className="product-div">
-        <ProCard data={data} />
-      </div>
+      {data.map((item) => {
+        return (
+          <div className="prod-div" key={item.id}>
+            <ProCard data={item} />
+          </div>
+        );
+      })}
     </div>
   );
 };
