@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useContext } from "react";
+import { AppContext } from "../context";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const API = "https://fakestoreapi.com/products";
+
+  const name = useContext(AppContext);
 
   const getData = async () => {
     try {
@@ -25,7 +29,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Products</h1>
+      <h1>Welcome {name}</h1>
     </div>
   );
 };
