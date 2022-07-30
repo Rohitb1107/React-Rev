@@ -5,7 +5,7 @@ import { AppContext } from "../context";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const API = "https://fakestoreapi.com/products";
+  const API = "https://hn.algolia.com/api/v1/search?query=html";
 
   const name = useContext(AppContext);
 
