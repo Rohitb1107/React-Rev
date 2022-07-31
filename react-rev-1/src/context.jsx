@@ -3,11 +3,17 @@ import React, { createContext } from "react";
 // create context
 const AppContext = createContext();
 
+const initState = {
+  hits: [],
+  page: 0,
+  nbPages: 0,
+  query: "html",
+};
+
 // create provider
 const AppProvider = ({ children }) => {
-  return (
-    <AppContext.Provider value={"Rohit Bagadi"}>{children}</AppContext.Provider>
-  );
+  const [state, dispatch] = useReducer(reducer, initState);
+  return <AppContext.Provider>{children}</AppContext.Provider>;
 };
 
 // export

@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useContext } from "react";
-import { AppContext } from "../context";
 
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(true);
   const API = "https://hn.algolia.com/api/v1/search?query=html";
-
-  const name = useContext(AppContext);
 
   const getData = async () => {
     try {
       const res = await axios.get(API);
-      setIsLoading(false);
       console.log(res.data);
     } catch (err) {
       console.log(err);
@@ -23,13 +17,9 @@ const Home = () => {
     getData();
   }, []);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <div>
-      <h1>Welcome {name}</h1>
+      <h1>Welcome</h1>
     </div>
   );
 };
