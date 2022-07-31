@@ -1,24 +1,23 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-const Product = () => {
-//   const products = useSelector((state) => state.productReducer.products);
-//   console.log(products);
+const Product = (allProducts) => {
+  const { data } = allProducts;
   return (
     <div>
-      {/* <div className="card" style={{ width: "18rem" }}>
+      <div style={{ width: "18rem" }}>
         <img
           className="card-img-top pro-img"
-          src={products[0].image}
+          src={data.image}
           alt="Card image"
         />
         <div className="card-body">
-          <h5 className="card-title">{products[0].title}</h5>
-          <p className="card-text">{products[0].description}</p>
-          <p className="card-text">{products[0].category}</p>
+          <h5 className="card-title">{data.title}</h5>
+          <p className="card-text">{data.description}</p>
+          <p className="card-text">{data.category}</p>
           <div className="row">
-            <div className="col-6">{products[0].price}</div>
-            <div className="col-6">{products[0].rating.rate}</div>
+            <div className="col-6">{data.price}</div>
+            <div className="col-6">{data.rating.rate}</div>
           </div>
           <a href="#" className="btn btn-primary">
             Add to cart
@@ -27,7 +26,7 @@ const Product = () => {
             Buy Now
           </a>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

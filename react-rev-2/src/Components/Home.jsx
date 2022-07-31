@@ -6,7 +6,7 @@ import { setProducts } from "../Redux/actions/productAction";
 
 const Home = () => {
   const API = "https://fakestoreapi.com/products";
-  const products = useSelector((state) => state);
+  const allProducts = useSelector((state) => state.productReducer.products);
   const dispatch = useDispatch();
 
   const getData = async () => {
@@ -21,11 +21,17 @@ const Home = () => {
   useEffect(() => {
     getData();
   }, []);
-  console.log(products);
+  console.log(allProducts);
   return (
-    <div>
+    <div className="main-content-div row w-75">
       <h1>All Products</h1>
-      <Product />
+      {allProducts.map((item) => {
+        return (
+          <div className="col-4" key={item.id}>
+            <Product data={item} />
+          </div>
+        );
+      })}
     </div>
   );
 };
