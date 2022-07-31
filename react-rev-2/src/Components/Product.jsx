@@ -2,11 +2,11 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const Product = () => {
-  const products = useSelector((state) => state.productReducer.products);
-  console.log(products);
+//   const products = useSelector((state) => state.productReducer.products);
+//   console.log(products);
   return (
     <div>
-      <div className="card" style={{ width: "18rem" }}>
+      {/* <div className="card" style={{ width: "18rem" }}>
         <img
           className="card-img-top pro-img"
           src={products[0].image}
@@ -27,7 +27,7 @@ const Product = () => {
             Buy Now
           </a>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
