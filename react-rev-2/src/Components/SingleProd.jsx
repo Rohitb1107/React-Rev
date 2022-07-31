@@ -1,10 +1,29 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import Product from "./Product";
+import { setProducts } from "../Redux/actions/productAction";
+import { useParams } from "react-router-dom";
 
-const Product = (allProducts) => {
-  const { data } = allProducts;
-  const { id } = data;
+const SingleProd = () => {
+  const { prod_Id } = useParams();
+  const API = `https://fakestoreapi.com/products/${prod_Id}`;
+  const allProducts = useSelector((state) => state.productReducer.products);
+  const dispatch = useDispatch();
+
+  const getData = async () => {
+    try {
+      const res = await axios.get(API);
+      dispatch(setProducts(res.data));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <div>
       <div style={{ width: "18rem" }}>
@@ -34,4 +53,4 @@ const Product = (allProducts) => {
   );
 };
 
-export default Product;
+export default SingleProd;
