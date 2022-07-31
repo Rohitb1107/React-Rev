@@ -32,3 +32,14 @@
   text-decoration: none;
   color: black;
 }
+
+/* Product css */
+.pro-img {
+  width: 12rem;
+}
+
+.card {
+  text-align: center;
+  align-items: center;
+  text-align: justify;
+}
