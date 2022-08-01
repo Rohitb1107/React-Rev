@@ -8,10 +8,10 @@ const AllRoutes = () => {
   return (
     <div>
       <Navbar />
-      <SingleProd />
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Home />}></Route>
-      </Routes> */}
+        <Route path="/product/:id" element={<SingleProd />}></Route>
+      </Routes>
     </div>
   );
 };

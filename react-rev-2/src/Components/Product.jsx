@@ -1,10 +1,10 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Product = (allProducts) => {
   const { data } = allProducts;
   const { id } = data;
+
   return (
     <div>
       <div style={{ width: "18rem" }}>
@@ -23,10 +23,8 @@ const Product = (allProducts) => {
           <a href="#" className="btn btn-primary">
             Add to cart
           </a>
-          <Link to={`/${id}`}>
-            <button href="#" className="btn btn-primary mx-2">
-              Buy Now
-            </button>
+          <Link to={`product/${id}`}>
+            <button className="btn btn-primary mx-2">Buy Now</button>
           </Link>
         </div>
       </div>

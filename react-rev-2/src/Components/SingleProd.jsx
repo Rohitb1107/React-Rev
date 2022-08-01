@@ -1,20 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
-import Product from "./Product";
-import { setProducts } from "../Redux/actions/productAction";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { selectedProduct } from "../Redux/actions/productAction";
 
 const SingleProd = () => {
-  const { prod_Id } = useParams();
-  const API = `https://fakestoreapi.com/products/${prod_Id}`;
-  const allProducts = useSelector((state) => state.productReducer.products);
+  const product = useSelector((state) => state.product)
+  const { id } = useParams();
+  const API = `https://fakestoreapi.com/products/${id}`;
   const dispatch = useDispatch();
 
   const getData = async () => {
     try {
       const res = await axios.get(API);
-      dispatch(setProducts(res.data));
+      dispatch(selectedProduct(res.data));
     } catch (err) {
       console.log(err);
     }
@@ -27,7 +26,7 @@ const SingleProd = () => {
   return (
     <div>
       <div style={{ width: "18rem" }}>
-        <img
+        {/* <img
           className="card-img-top pro-img"
           src={data.image}
           alt="Card image"
@@ -42,12 +41,11 @@ const SingleProd = () => {
           <a href="#" className="btn btn-primary">
             Add to cart
           </a>
-          <Link to={`/${id}`}>
-            <button href="#" className="btn btn-primary mx-2">
-              Buy Now
-            </button>
-          </Link>
-        </div>
+
+          <button href="#" className="btn btn-primary mx-2">
+            Buy Now
+          </button>
+        </div> */}
       </div>
     </div>
   );

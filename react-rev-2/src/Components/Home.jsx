@@ -21,7 +21,6 @@ const Home = () => {
   useEffect(() => {
     getData();
   }, []);
-  console.log(allProducts);
   return (
     <div className="main-content-div row w-75">
       <h1>All Products</h1>
