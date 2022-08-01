@@ -6,7 +6,7 @@ import { setProducts } from "../Redux/actions/productAction";
 
 const Home = () => {
   const API = "https://fakestoreapi.com/products";
-  const allProducts = useSelector((state) => state.productReducer.products);
+  const allProducts = useSelector((state) => state.allProds.products);
   const dispatch = useDispatch();
 
   const getData = async () => {
