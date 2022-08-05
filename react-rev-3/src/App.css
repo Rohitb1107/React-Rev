@@ -1,42 +1,48 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navbar css */
+
+.nav-div {
+  width: 100%;
+  background-color: aliceblue;
+  height: 5rem;
+  padding-top: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.shop-logo {
+  margin-left: 10rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-brand {
+  font-size: 1.5rem;
+}
+.ul-div ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1rem;
+  margin-left: 5rem;
+  font-size: 1.2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.ul-div a:hover {
+  text-decoration: underline;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ul-div a {
+  text-decoration: none;
+  color: black;
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+.cart-div {
+  background-color: honeydew;
+  border-radius: 10px;
+  padding: 0.2rem;
+  display: flex;
+  margin-right: 1rem;
+  font-size: 1.3rem;
+  color: royalblue;
 }
